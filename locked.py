@@ -11,10 +11,11 @@ def test_locked_out_user():
     login_button = driver.find_element(By.ID, "login-button")
 
     username_input.send_keys("locked_out_user")
+    time.sleep(2)
     password_input.send_keys("secret_sauce")
+    time.sleep(2)
     login_button.click()
-    
-    time.sleep(5)
+    time.sleep(2)
 
     error_message = driver.find_element(By.XPATH, "//h3[@data-test='error']")
     if "Epic sadface" in error_message.text:

@@ -13,10 +13,12 @@ def test_performance_glitch_user():
     login_button = driver.find_element(By.ID, "login-button")
 
     username_input.send_keys("performance_glitch_user")
+    time.sleep(2)
     password_input.send_keys("secret_sauce")
+    time.sleep(2)
     login_button.click()
     
-    time.sleep(5)
+    time.sleep(2)
 
     start_time = time.time()
     try:

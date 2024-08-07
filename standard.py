@@ -13,28 +13,28 @@ try:
     
     username_input = driver.find_element(By.ID, 'user-name')
     username_input.send_keys('standard_user')
-    
+    time.sleep(2)
     password_input = driver.find_element(By.ID, 'password')
     password_input.send_keys('secret_sauce')
     
-    time.sleep(5)
+    time.sleep(2)
     
     login_button = driver.find_element(By.ID, 'login-button')
     login_button.click()
     
-    time.sleep(5)
+    time.sleep(2)
     
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, 'inventory_item')))
     
     add_to_cart_button = driver.find_element(By.CLASS_NAME, 'btn_inventory')
     add_to_cart_button.click()
     
-    time.sleep(5)
+    time.sleep(2)
     
     cart_icon = driver.find_element(By.CLASS_NAME, 'shopping_cart_link')
     cart_icon.click()
     
-    time.sleep(5)
+    time.sleep(2)
     
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, 'cart_item')))
     cart_items = driver.find_elements(By.CLASS_NAME, 'cart_item')
