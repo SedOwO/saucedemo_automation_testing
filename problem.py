@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 def test_problem_user():
     driver = webdriver.Chrome()
@@ -14,6 +15,8 @@ def test_problem_user():
     username_input.send_keys("problem_user")
     password_input.send_keys("secret_sauce")
     login_button.click()
+    
+    time.sleep(5)
 
     # Verify if the page loads, but check for broken elements
     try:

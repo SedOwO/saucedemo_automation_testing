@@ -1,9 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+import time
 
 
 try:
@@ -22,9 +21,13 @@ try:
     password_input = driver.find_element(By.ID, 'password')
     password_input.send_keys('secret_sauce')
     
+    time.sleep(5)
+    
     # Click the login button
     login_button = driver.find_element(By.ID, 'login-button')
     login_button.click()
+    
+    time.sleep(5)
     
     # Wait for the products page to load
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, 'inventory_item')))
@@ -33,9 +36,13 @@ try:
     add_to_cart_button = driver.find_element(By.CLASS_NAME, 'btn_inventory')
     add_to_cart_button.click()
     
+    time.sleep(5)
+    
     # Click on the cart icon
     cart_icon = driver.find_element(By.CLASS_NAME, 'shopping_cart_link')
     cart_icon.click()
+    
+    time.sleep(5)
     
     # Verify the item is in the cart
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, 'cart_item')))

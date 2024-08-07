@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import time
 
 def test_locked_out_user():
     driver = webdriver.Chrome()
@@ -12,6 +13,8 @@ def test_locked_out_user():
     username_input.send_keys("locked_out_user")
     password_input.send_keys("secret_sauce")
     login_button.click()
+    
+    time.sleep(5)
 
     # Check for error message
     error_message = driver.find_element(By.XPATH, "//h3[@data-test='error']")

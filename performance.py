@@ -15,6 +15,8 @@ def test_performance_glitch_user():
     username_input.send_keys("performance_glitch_user")
     password_input.send_keys("secret_sauce")
     login_button.click()
+    
+    time.sleep(5)
 
     # Verify if the page eventually loads, allowing extra time
     start_time = time.time()
