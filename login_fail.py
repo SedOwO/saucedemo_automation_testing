@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 
 try:
@@ -12,9 +13,13 @@ try:
     
     username_input = driver.find_element(By.ID, 'user-name')
     username_input.send_keys('standard_user')
+            
+    time.sleep(2)
     
     password_input = driver.find_element(By.ID, 'password')
     password_input.send_keys('wrong_password')
+
+    time.sleep(2)
     
     login_button = driver.find_element(By.ID, 'login-button')
     login_button.click()
