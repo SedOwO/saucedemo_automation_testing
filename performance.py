@@ -18,7 +18,6 @@ def test_performance_glitch_user():
     
     time.sleep(5)
 
-    # Verify if the page eventually loads, allowing extra time
     start_time = time.time()
     try:
         WebDriverWait(driver, 20).until(

@@ -16,7 +16,6 @@ def test_locked_out_user():
     
     time.sleep(5)
 
-    # Check for error message
     error_message = driver.find_element(By.XPATH, "//h3[@data-test='error']")
     if "Epic sadface" in error_message.text:
         print("Locked Out User: Login failed as expected!")

@@ -18,7 +18,6 @@ def test_problem_user():
     
     time.sleep(5)
 
-    # Verify if the page loads, but check for broken elements
     try:
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, "inventory_item"))
